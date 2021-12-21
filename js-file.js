@@ -1,44 +1,32 @@
-//creates a reference to DOM element
+//creates a <p> with red text
 const container = document.querySelector('#container');
 
-//creates a new div and stores it in the variable content
-// const makeStuff = document.createElement('div');
-
-//
-// makeStuff.classList.add('blue');
-// console.log("makeStuff.classList: " + makeStuff.classList)
-
-// makeStuff.textContent = 'This is the glorious text-content!';
-
-
-
-
-
-// container.appendChild(makeStuff);
-
-//creates a new h3 and stores it in the variable h3
-const h3 = document.createElement('h3')
-
-
-h3.classList.add('h3');
-h3.textContent = "I'm a blue h3!";
-h3.style.color = 'blue';
-//inserts h3 into container div
-container.appendChild(h3);
-
-/*---------------------------------------------*/
-const blackDiv = document.createElement('div');
-blackDiv.style.cssText = 'border: black; background-color: pink;';
-// container.appendChild(blackDiv);
-
-/*---------------------------------------------*/
-const myHeader1 = document.createElement('h1');
-myHeader1.textContent = "I'm in a div!!!!";
-blackDiv.appendChild(myHeader1);
-
-/*---------------------------------------------*/
+//child of container
 const paragraph = document.createElement('p');
-paragraph.textContent = 'ME TOO!';
-paragraph.style.cssText = 'font-weight: bold; color: white;';
-blackDiv.appendChild(paragraph);
-container.appendChild(blackDiv);
+paragraph.textContent = "Hey I'm Red!!!"
+paragraph.style.color = 'red';
+container.appendChild(paragraph);
+
+//creates an <h3> with blue text
+const headerThree = document.createElement('h3');
+headerThree.style.color = 'blue';
+headerThree.textContent = "I'm a blue h3!"
+container.appendChild(headerThree);
+
+
+//creates a div with black border and pink background
+const division = document.createElement('div');
+container.appendChild(division);
+division.style.cssText = 'border: solid black; background: pink';
+
+    //child containers for division
+    //<h1> that is a child to divsion
+    const headerOne = document.createElement('h1');
+    division.appendChild(headerOne);
+    headerOne.textContent = "I'm the <h1> inside the div";
+
+    //paragraph div that is a sibling to headerOne
+    const paragraphTwo = document.createElement('p');
+    paragraphTwo.textContent = "ME TOO!!";
+    division.appendChild(paragraphTwo);
+//</division>
